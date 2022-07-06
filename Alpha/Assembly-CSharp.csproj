@@ -63,6 +63,7 @@
     <Compile Include="Assets\Kawaii Slime\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Kawaii Slime\Scripts\AI\PlayerCtrl.cs" />
     <Compile Include="Assets\Kawaii Slime\Scripts\AI\EnemyAi.cs" />
+    <Compile Include="Assets\Kawaii Slime\Scripts\AI\camerawork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawaii Slime\Cameras\CameraGuidelines.txt" />

@@ -26,16 +26,18 @@ public class PlayerCtrl : MonoBehaviour
         //rgd.velocity = move_dir * speed * Time.deltaTime;
         //rgd.AddForce(move_dir * speed*Time.deltaTime);
         anim.SetFloat("Speed", 0);
-        transform.position += move_dir * speed * Time.deltaTime;
+        transform.position += move_dir.normalized * speed * Time.deltaTime;
         if (move_dir.x != 0)
         {
-            anim.SetFloat("Speed",  move_dir.x);
+            anim.SetFloat("Speed", Mathf.Abs(move_dir.x));
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move_dir), Time.deltaTime * 50);
         }
         if (move_dir.z != 0)
         {
-            anim.SetFloat("Speed", move_dir.z);
+            anim.SetFloat("Speed", Mathf.Abs( move_dir.z));
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move_dir), Time.deltaTime * 50);
         }
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move_dir), Time.deltaTime*50 );
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetTrigger("Jump");
